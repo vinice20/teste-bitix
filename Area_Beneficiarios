@@ -1,0 +1,103 @@
+<?php 
+$host = 'localhost';
+$username = "id13058573_localhost";
+$password = "Password@123";
+$db = 'id13058573_login';
+
+$conn = mysqli_connect($host, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR);
+// seleciona a base de dados em que vamos trabalhar
+mysqli_select_db($conn, $db);
+
+   
+$Bitix_Customer_Plan = array(
+    
+    'Bitix Customer Plano 1' => array
+        (    
+            'codigo' => 1,
+            'faixa1' => '10.00',
+            'faixa2' => '12',
+            'faixa3' => '15.00'
+        ),
+
+    'Bitix Customer Plano 2' => Array
+        (
+            'codigo' => 2,
+            "faixa1" => '20.00',
+            "faixa2" => '30',
+            "faixa3" => '40.00'
+
+        ),
+
+    'Bitix_Customer Plano 3' => Array
+        (    
+            'codigo' => 3,
+            "faixa1" => 30,
+            "faixa2" => 40.00,
+            "faixa3" => 50
+
+        )
+    
+	
+);  
+    $total = 0;
+
+    if(isset($_POST['fnome']) and isset($_POST['fplano'])){
+
+      $Nome_Beneficiario = $_POST['fnome'];
+      $Idade_Beneficiario  = $_POST['fidade'];
+      $Plano_Beneficiario = $_POST['fplano'];
+      
+     
+  }
+    if($Idade_Beneficiario  <= 17){
+    $Preco_Beneficiario = $Bitix_Customer_Plan[$Plano_Beneficiario ]['faixa1'];
+  
+    
+   }
+    if($Idade_Beneficiario  >= 18 && $Idade_Beneficiario  <= 40){
+    $Preco_Beneficiario = $Bitix_Customer_Plan[$Plano_Beneficiario ]['faixa2'];
+  
+    
+   }
+   
+    if($Idade_Beneficiario  > 40){
+    $Preco_Beneficiario = $Bitix_Customer_Plan[$Plano_Beneficiario ]['faixa3'];
+  
+    
+   }
+
+   $query =("INSERT INTO `Beneficiarios`(`Nome_Beneficiario`, `Idade_Beneficiario`, `Preco_Beneficiario`,`Plano_Beneficiario`)  VALUES('$Nome_Beneficiario',$Idade_Beneficiario, $Preco_Beneficiario,'$Plano_Beneficiario')");
+//   ));
+// executa a query
+   $dados = mysqli_query($conn, $query);
+   if($dados){
+       echo "sucesso";
+   }
+
+   $result = mysqli_query($conn,"SELECT * FROM `Beneficiarios`");
+
+
+// Checa se há campos vazios
+if (mysqli_num_rows($result) > 0) {
+    // Se há campos preenchidos no banco, loopa todos os resultados e puxa. 
+
+echo "<table>";
+while ($row = mysqli_fetch_array($result)) {
+   echo "<tr><td>Nome:</td>";
+   echo "<td>".$row["Nome_Beneficiario"]."</td></tr>";
+   echo "<tr><td>idade:</td>";
+   echo "<td>".$row["Idade_Beneficiario"]."</td></tr>";
+   echo "<tr><td>Preco Beneficiario:</td>".",00";
+   echo "<td>".$row["Preco_Beneficiario"].",00</td></tr>";
+   echo "<tr><td>Plano Beneficiario:</td>";
+   echo "<td>".$row["Plano_Beneficiario"]."</td></tr>";
+   $carrinho = 1 * $row['Preco_Beneficiario'];
+   $total = $total + $carrinho;
+}
+echo "</table>";
+}
+
+
+echo "<h4>preco total = ".$total.",00</h4>";
+?>
+
