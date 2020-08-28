@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+    <script src='main.js'></script>
+    <style>
+
+    body{
+      background-color:rgb(218, 214, 214);
+
+
+    }
+    
+    .painel-login{
+    background-color:white;
+    box-shadow: 0px 0px 5px black;
+    margin-top: 1px;
+    position:absolute;
+    width: 700px;
+    height: 800px;
+    margin-left:1px;
+    
+    
+
+    }
+    
+    .form-control{
+    
+    border-radius: 45px;
+    margin-left: 40%;
+    width: 7cm;
+    height: 25px;
+    margin-left:2cm;
+    margin-bottom: 17px;
+    border-style: none;
+    border-color:white;
+    box-shadow: 0px 0px 3px grey;
+
+
+    }
+    
+    
+    .form-group{
+    
+    margin-top: 10px;
+    top: 110px;
+    position: relative;
+    left: 40px;
+    
+    }
+
+    .label{
+
+    bottom:30px;
+    position: relative;
+    left:100px;
+    }                                        
+
+    #fsumit{
+    bottom: -120px;
+    position: relative;
+    margin-left:140px;
+    border-radius: 45px;
+    height: 1cm;
+    background-color: blue;
+    outline-style: none;
+    border-style: none;
+    color: cornsilk;
+    width:10cm;
+    
+    
+    }
+
+    #bottom{
+    margin-top:7px;
+    background-color: blue;
+    position: absolute;
+    height: 100px;
+    width: 620px;
+    display:inline;
+
+   }
+
+
+    </style>
+</head>
+<body>
+<div id="bottom"></div>
+<div class="painel-login">
+<h1 style="display:inline;margin-top:100px;position:absolute;margin-left:6cm;font-weight:bold;font-size:2.2em">Cadastre-se</h1>
+<img style="position: absolute;display:inline;top:-50px;left:620px;" src="unorp.br-ciencias-contabeis-ft-curso-superior-de-tecnologia-em-design-de-interiores.jpg" width="900px" height="900px" />  
+<h2 style="position: absolute;left:5cm;display: none;">Your Login</h2>
+<form id="form" method="POST" action="teste.php" submit="teste.php" style="margin-top:100px">
+<div class="form-group">
+ <label class="label">Nome:</label>
+   <input style="border-radius:2px;right:10px;height:40px;background-color:#f1f1f1;width:350px;margin-left:30px"  type="text" name="fnome" placeholder="example@gmail.com"  value=""
+ class="form-control" autocomplete="off">
+</div>
+  <div class="form-group">
+   <label  class="label" style="margin-left:3px">Idade:</label>
+    <input style="border-radius:2px;height:40px;background-color:#f1f1f1;width:350px;margin-left:30px" type="number" name="fidade"  value=""
+ class="form-control" autocomplete="off">
+</div>
+ 
+<div class="form-group col m12 s12 paddingNone paddingL">
+       <select name="fplano" class="form-control box_form" required="" id="pacote">
+         <option value="1" selected="" disabled="">Escolha uma unidade</option>  
+         <option value="Bitix Customer Plano 1">Bitix Customer Plano 1</option>       
+         <option value="Bitix Customer Plano 2">Bitix Customer Plano 2</option>   
+         <option value="Bitix Customer Plano 3">Bitix Customer Plano 3</option>   
+       </select>
+     </div>   
+<input placeholder="Login" value="Login"  id="fsumit" type="submit" name="content" style="border-radius:2px;height:40px;width:350px;justify-content:center;margin-left:20%">
+</form>
+
+</div>    
+</body>
+</html> 
