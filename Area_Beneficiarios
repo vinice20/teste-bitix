@@ -35,7 +35,34 @@ $Bitix_Customer_Plan = array(
             "faixa2" => 40.00,
             "faixa3" => 50
 
-        )
+        ),
+      
+    'Bitix_Customer Plano 4' => Array
+        (    
+            'codigo' => 4,
+            "faixa1" => 40,
+            "faixa2" => 50.00,
+            "faixa3" => 60
+
+  ),
+    
+    'Bitix_Customer Plano 5' => Array
+        (    
+            'codigo' => 4,
+            "faixa1" => 50,
+            "faixa2" => 60.00,
+            "faixa3" => 70
+
+  ),
+     
+    'Bitix_Customer Plano 6' => Array
+        (    
+            'codigo' => 4,
+            "faixa1" => 60,
+            "faixa2" => 70.00,
+            "faixa3" => 80
+
+  ),
     
 	
 );  
